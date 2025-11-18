@@ -1,0 +1,56 @@
+[
+  {
+    "name": "LANTERNA",
+    "path": "images/LANTERNA.png"
+  }
+,
+  {
+    "name": "MAGGIORI ACCOMPAGNATI",
+    "path": "images/MAGGIORI ACCOMPAGNATI.png"
+  }
+,
+  {
+    "name": "dividere il gruppo",
+    "path": "images/dividere il gruppo.png"
+  }
+,
+  {
+    "name": "furfante",
+    "path": "images/furfante.png"
+  }
+,
+  {
+    "name": "guerriero",
+    "path": "images/guerriero.png"
+  }
+,
+  {
+    "name": "indizi3",
+    "path": "images/indizi3.png"
+  }
+,
+  {
+    "name": "pietrificati 1",
+    "path": "images/pietrificati 1.png"
+  }
+,
+  {
+    "name": "pietrificati 2",
+    "path": "images/pietrificati 2.png"
+  }
+,
+  {
+    "name": "porta segreta",
+    "path": "images/porta segreta.png"
+  }
+,
+  {
+    "name": "riposarsi",
+    "path": "images/riposarsi.png"
+  }
+,
+  {
+    "name": "trasportare peso",
+    "path": "images/trasportare peso.png"
+  }
+]
