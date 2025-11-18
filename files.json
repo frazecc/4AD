@@ -5,8 +5,23 @@
   }
 ,
   {
+    "name": "ABERRANTI",
+    "path": "images/ABERRANTI.png"
+  }
+,
+  {
+    "name": "BOSS",
+    "path": "images/BOSS.png"
+  }
+,
+  {
     "name": "INFESTANTI DIABOLICI",
     "path": "images/INFESTANTI DIABOLICI.png"
+  }
+,
+  {
+    "name": "INFESTANTI",
+    "path": "images/INFESTANTI.png"
   }
 ,
   {
@@ -17,6 +32,16 @@
   {
     "name": "MAGGIORI ACCOMPAGNATI",
     "path": "images/MAGGIORI ACCOMPAGNATI.png"
+  }
+,
+  {
+    "name": "MISSIONI",
+    "path": "images/MISSIONI.png"
+  }
+,
+  {
+    "name": "OGGETTI MAGICI",
+    "path": "images/OGGETTI MAGICI.png"
   }
 ,
   {
@@ -40,6 +65,11 @@
   }
 ,
   {
+    "name": "SEGUACI",
+    "path": "images/SEGUACI.png"
+  }
+,
+  {
     "name": "STANZE INIZIALI DUNGEON",
     "path": "images/STANZE INIZIALI DUNGEON.png"
   }
@@ -55,8 +85,18 @@
   }
 ,
   {
+    "name": "caratteristiche speciali",
+    "path": "images/caratteristiche speciali.png"
+  }
+,
+  {
     "name": "chierico",
     "path": "images/chierico.png"
+  }
+,
+  {
+    "name": "cosa ce nella stanza",
+    "path": "images/cosa ce nella stanza.png"
   }
 ,
   {
@@ -75,6 +115,11 @@
   }
 ,
   {
+    "name": "eventi speciali",
+    "path": "images/eventi speciali.png"
+  }
+,
+  {
     "name": "furfante",
     "path": "images/furfante.png"
   }
@@ -82,6 +127,16 @@
   {
     "name": "guerriero",
     "path": "images/guerriero.png"
+  }
+,
+  {
+    "name": "indizi1",
+    "path": "images/indizi1.png"
+  }
+,
+  {
+    "name": "indizi2",
+    "path": "images/indizi2.png"
   }
 ,
   {
@@ -125,6 +180,11 @@
   }
 ,
   {
+    "name": "spell",
+    "path": "images/spell.png"
+  }
+,
+  {
     "name": "tesoro nascosto",
     "path": "images/tesoro nascosto.png"
   }
@@ -132,6 +192,11 @@
   {
     "name": "tessere dungeon",
     "path": "images/tessere dungeon.png"
+  }
+,
+  {
+    "name": "trappole",
+    "path": "images/trappole.png"
   }
 ,
   {
