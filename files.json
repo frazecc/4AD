@@ -1,5 +1,11 @@
 [
   {
+    "name": "STANZE INIZIALI DUNGEON",
+    "path": "images/NEMICI/STANZE INIZIALI DUNGEON.png",
+    "group": "NEMICI"
+  }
+,
+  {
     "name": "TESORI MAGICI DIABOLICI",
     "path": "images/TABELLE/TESORI MAGICI DIABOLICI.png",
     "group": "TABELLE"
