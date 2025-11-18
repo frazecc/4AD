@@ -138,6 +138,12 @@
   }
 ,
   {
+    "name": "spell",
+    "path": "images/REGOLAMENTO/spell.png",
+    "group": "REGOLAMENTO"
+  }
+,
+  {
     "name": "tesoro nascosto",
     "path": "images/REGOLAMENTO/tesoro nascosto.png",
     "group": "REGOLAMENTO"
