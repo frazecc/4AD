@@ -72,6 +72,12 @@
   }
 ,
   {
+    "name": "porta segreta",
+    "path": "images/REGOLAMENTO/porta segreta.png",
+    "group": "REGOLAMENTO"
+  }
+,
+  {
     "name": "trasportare peso",
     "path": "images/REGOLAMENTO/trasportare peso.png",
     "group": "REGOLAMENTO"
