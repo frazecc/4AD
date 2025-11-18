@@ -6,12 +6,6 @@
   }
 ,
   {
-    "name": "STANZE INIZIALI DUNGEON",
-    "path": "images/NEMICI/STANZE INIZIALI DUNGEON.png",
-    "group": "NEMICI"
-  }
-,
-  {
     "name": "barbaro",
     "path": "images/PG/barbaro.png",
     "group": "PG"
