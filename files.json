@@ -6,6 +6,12 @@
   }
 ,
   {
+    "name": "ABERRANTI",
+    "path": "images/NEMICI/ABERRANTI.png",
+    "group": "NEMICI"
+  }
+,
+  {
     "name": "BOSS DIABOLICI",
     "path": "images/NEMICI/BOSS DIABOLICI.png",
     "group": "NEMICI"
