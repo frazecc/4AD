@@ -96,6 +96,12 @@
   }
 ,
   {
+    "name": "eroi caduti",
+    "path": "images/REGOLAMENTO/eroi caduti.png",
+    "group": "REGOLAMENTO"
+  }
+,
+  {
     "name": "indizi3",
     "path": "images/REGOLAMENTO/indizi3.png",
     "group": "REGOLAMENTO"
