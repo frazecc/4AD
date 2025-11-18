@@ -30,6 +30,12 @@
   }
 ,
   {
+    "name": "nano",
+    "path": "images/PG/nano.png",
+    "group": "PG"
+  }
+,
+  {
     "name": "TESORI MAGICI DIABOLICI",
     "path": "images/REGOLAMENTO/TESORI MAGICI DIABOLICI.png",
     "group": "REGOLAMENTO"
