@@ -94,4 +94,16 @@
     "path": "images/PG/nano.png",
     "group": "PG"
   }
+,
+  {
+    "name": "MAGGIORI ACCOMPAGNATI",
+    "path": "images/REGOLE/MAGGIORI ACCOMPAGNATI.png",
+    "group": "REGOLE"
+  }
+,
+  {
+    "name": "LANTERNA",
+    "path": "images/TABELLE/LANTERNA.png",
+    "group": "TABELLE"
+  }
 ]
