@@ -102,6 +102,12 @@
   }
 ,
   {
+    "name": "indizi1",
+    "path": "images/REGOLAMENTO/indizi1.png",
+    "group": "REGOLAMENTO"
+  }
+,
+  {
     "name": "indizi2",
     "path": "images/REGOLAMENTO/indizi2.png",
     "group": "REGOLAMENTO"
