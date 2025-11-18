@@ -35,14 +35,10 @@ async function initApp() {
 
 // Funzione di Gruppo: Seleziona/Deseleziona tutti gli elementi di una sottocartella
 function toggleGroup(groupName, checked) {
-    // Seleziona tutte le checkbox che appartengono a questo gruppo (groupName)
     const checkboxes = document.querySelectorAll(`input[data-group="${groupName}"]`);
-    
     checkboxes.forEach(checkbox => {
         checkbox.checked = checked;
     });
-    
-    // Aggiorna immediatamente la visualizzazione delle immagini
     displaySelectedImages();
 }
 
@@ -52,8 +48,11 @@ function renderChecklist(resources) {
     const checklistOutputDiv = document.getElementById('checklist-output');
     checklistOutputDiv.innerHTML = ''; 
     
+    // *************************************************************
+    // PUNTO CHIAVE: CREAZIONE DINAMICA DEI GRUPPI/COLONNE
     // 1. Raggruppa le risorse per nome della sottocartella (group)
     const groupedResources = resources.reduce((acc, resource) => {
+        // Usa il campo 'group' dal JSON (es. 'pg', 'nemici'). Se non c'è, usa 'altro'.
         const group = resource.group || 'altro'; 
         if (!acc[group]) {
             acc[group] = [];
@@ -61,12 +60,13 @@ function renderChecklist(resources) {
         acc[group].push(resource);
         return acc;
     }, {});
+    // *************************************************************
     
     // Creiamo la griglia delle colonne
     const imageOutputGrid = document.createElement('div');
     imageOutputGrid.id = 'image-output'; 
     
-    // 2. Itera sui gruppi (sottocartelle) e crea la COLONNA per ciascuno
+    // 2. Itera sui gruppi (sottocartelle) che sono stati trovati nel JSON e crea una COLONNA
     for (const groupName in groupedResources) {
         
         const columnDiv = document.createElement('div');
@@ -77,7 +77,8 @@ function renderChecklist(resources) {
         headerDiv.classList.add('column-header');
         
         const headerTitle = document.createElement('h3');
-        headerTitle.textContent = groupName.toUpperCase();
+        // Usa il nome del gruppo trovato nel JSON come titolo della colonna
+        headerTitle.textContent = groupName.toUpperCase(); 
         
         // Checkbox principale del gruppo
         const groupCheckbox = document.createElement('input');
@@ -102,7 +103,7 @@ function renderChecklist(resources) {
             checkbox.id = inputId;
             checkbox.value = resource.path;
             checkbox.checked = true; 
-            checkbox.onchange = displaySelectedImages; // Aggiorna le immagini
+            checkbox.onchange = displaySelectedImages; 
             checkbox.setAttribute('data-group', groupName); // Attributo per il selettore di gruppo
             
             const label = document.createElement('label');
@@ -128,7 +129,6 @@ function displaySelectedImages() {
     const allCheckboxes = document.querySelectorAll('.column-checklist input[type="checkbox"]:checked');
     
     allCheckboxes.forEach(checkbox => {
-        // Ignoriamo le checkbox di gruppo (che non hanno valore o alt)
         if (checkbox.value) {
             const imageLabel = document.querySelector(`label[for="${checkbox.id}"]`).textContent;
             
@@ -141,13 +141,11 @@ function displaySelectedImages() {
 
     const outputDiv = document.getElementById('results');
     
-    // Rimuove il vecchio contenuto
     let oldImageOutput = document.getElementById('final-image-output');
     if (oldImageOutput) {
         oldImageOutput.remove();
     }
     
-    // Crea il nuovo contenitore per le immagini selezionate
     const finalImageOutput = document.createElement('div');
     finalImageOutput.id = 'final-image-output';
     finalImageOutput.style.marginTop = '20px';
@@ -159,11 +157,10 @@ function displaySelectedImages() {
         return;
     }
 
-    // Visualizzazione delle immagini selezionate
     selectedImages.forEach(image => {
         const img = document.createElement('img');
         
-        // CORREZIONE DEL PERCORSO: Aggiungiamo /4AD/ all'inizio
+        // CORREZIONE DEL PERCORSO
         img.src = `/4AD/${image.path}`; 
         
         img.alt = image.name; 
