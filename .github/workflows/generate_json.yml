@@ -3,9 +3,16 @@ name: Generate JSON Index on Push
 on:
   push:
     branches:
-      - main
+      - main # Assicurati che questo sia il ramo corretto (main o master)
     paths:
       - 'images/**' # Avvia l'azione solo quando ci sono cambiamenti nella cartella images/
+
+# **********************************************
+# BLOCCO AGGIUNTO PER RISOLVERE L'ERRORE 403
+# Concede all'Action i permessi di scrittura (write)
+permissions:
+  contents: write 
+# **********************************************
 
 jobs:
   generate-index:
@@ -17,8 +24,7 @@ jobs:
       - name: List files and generate JSON
         id: generate
         run: |
-          # Trova tutti i file .jpg e .png nella cartella images/, ignorando le cartelle
-          # Genera il JSON
+          # Questo script cerca i file .jpg, .png e .jpeg nella cartella images/ e crea files.json
           echo "[" > files.json
           FIRST=true
           for file in images/*.{jpg,png,jpeg}; do
@@ -27,7 +33,7 @@ jobs:
                 echo "," >> files.json
               fi
               FILENAME=$(basename "$file")
-              # Usa il nome del file (senza estensione) come nome leggibile (nome: "mappa_1")
+              # Usa il nome del file (senza estensione) come nome leggibile
               CLEAN_NAME=$(echo "$FILENAME" | sed -E 's/\.[^.]*$//' | tr '_' ' ') 
               
               # Crea l'oggetto JSON
