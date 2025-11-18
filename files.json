@@ -30,6 +30,24 @@
   }
 ,
   {
+    "name": "SEGUACI ALTERNATIVI",
+    "path": "images/NEMICI/SEGUACI ALTERNATIVI.png",
+    "group": "NEMICI"
+  }
+,
+  {
+    "name": "SEGUACI DIABOLICI",
+    "path": "images/NEMICI/SEGUACI DIABOLICI.png",
+    "group": "NEMICI"
+  }
+,
+  {
+    "name": "SEGUACI",
+    "path": "images/NEMICI/SEGUACI.png",
+    "group": "NEMICI"
+  }
+,
+  {
     "name": "barbaro",
     "path": "images/PG/barbaro.png",
     "group": "PG"
