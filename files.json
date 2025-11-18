@@ -1,5 +1,17 @@
 [
   {
+    "name": "ABERRANTI DIABOLICI",
+    "path": "images/NEMICI/ABERRANTI DIABOLICI.png",
+    "group": "NEMICI"
+  }
+,
+  {
+    "name": "BOSS DIABOLICI",
+    "path": "images/NEMICI/BOSS DIABOLICI.png",
+    "group": "NEMICI"
+  }
+,
+  {
     "name": "MAGGIORI ACCOMPAGNATI",
     "path": "images/NEMICI/MAGGIORI ACCOMPAGNATI.png",
     "group": "NEMICI"
