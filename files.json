@@ -40,8 +40,33 @@
   }
 ,
   {
+    "name": "STANZE INIZIALI DUNGEON",
+    "path": "images/STANZE INIZIALI DUNGEON.png"
+  }
+,
+  {
+    "name": "TESORI MAGICI DIABOLICI",
+    "path": "images/TESORI MAGICI DIABOLICI.png"
+  }
+,
+  {
+    "name": "barbaro",
+    "path": "images/barbaro.png"
+  }
+,
+  {
+    "name": "chierico",
+    "path": "images/chierico.png"
+  }
+,
+  {
     "name": "dividere il gruppo",
     "path": "images/dividere il gruppo.png"
+  }
+,
+  {
+    "name": "elfo",
+    "path": "images/elfo.png"
   }
 ,
   {
@@ -62,6 +87,21 @@
   {
     "name": "indizi3",
     "path": "images/indizi3.png"
+  }
+,
+  {
+    "name": "mago",
+    "path": "images/mago.png"
+  }
+,
+  {
+    "name": "mezzuomo",
+    "path": "images/mezzuomo.png"
+  }
+,
+  {
+    "name": "nano",
+    "path": "images/nano.png"
   }
 ,
   {
@@ -87,6 +127,11 @@
   {
     "name": "tesoro nascosto",
     "path": "images/tesoro nascosto.png"
+  }
+,
+  {
+    "name": "tessere dungeon",
+    "path": "images/tessere dungeon.png"
   }
 ,
   {
