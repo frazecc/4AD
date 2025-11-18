@@ -7,21 +7,21 @@ async function initApp() {
     checklistDiv.innerHTML = 'Caricamento file di configurazione...';
 
     try {
-        // CORREZIONE DEL PERCORSO PER REPOSITORY DI PROGETTO (/4AD/)
+        // CORREZIONE ANTI-CACHE: Aggiungiamo un timestamp per forzare il download del file aggiornato
         const jsonPath = '/4AD/files.json'; 
-        const response = await fetch(jsonPath);
+        const cacheBuster = `?v=${new Date().getTime()}`; 
+        const fullPath = jsonPath + cacheBuster; 
+        
+        const response = await fetch(fullPath);
         
         if (!response.ok) {
             throw new Error(`Impossibile trovare files.json (Status: ${response.status}).`);
         }
         
-        // Converte il JSON in un oggetto JavaScript
         imageResources = await response.json();
 
-        // *************************************************************
-        // AGGIUNTA PER ORDINAMENTO ALFABETICO
+        // Ordinamento alfabetico
         imageResources.sort((a, b) => a.name.localeCompare(b.name));
-        // *************************************************************
         
     } catch (error) {
         // Mostra un errore chiaro direttamente sul sito in caso di fallimento
