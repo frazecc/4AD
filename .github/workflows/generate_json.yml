@@ -3,16 +3,12 @@ name: Generate JSON Index on Push
 on:
   push:
     branches:
-      - main # Assicurati che questo sia il ramo corretto (main o master)
+      - main
     paths:
-      - 'images/**' # Avvia l'azione solo quando ci sono cambiamenti nella cartella images/
+      - 'images/**'
 
-# **********************************************
-# BLOCCO AGGIUNTO PER RISOLVERE L'ERRORE 403
-# Concede all'Action i permessi di scrittura (write)
 permissions:
   contents: write 
-# **********************************************
 
 jobs:
   generate-index:
@@ -24,22 +20,28 @@ jobs:
       - name: List files and generate JSON
         id: generate
         run: |
-          # Questo script cerca i file .jpg, .png e .jpeg nella cartella images/ e crea files.json
+          # Questo script cerca i file in TUTTE le sottocartelle di images/
           echo "[" > files.json
           FIRST=true
-          for file in images/*.{jpg,png,jpeg}; do
+          # Modifica: usa un pattern ricorsivo per trovare file in tutte le sottocartelle
+          for file in images/**/*.{jpg,png,jpeg}; do
             if [ -e "$file" ]; then
               if [ "$FIRST" = "false" ]; then
                 echo "," >> files.json
               fi
+              
               FILENAME=$(basename "$file")
+              # Estrae il nome della sottocartella (es. 'pg', 'nemici')
+              DIRNAME=$(dirname "$file" | sed 's/images\///')
+              
               # Usa il nome del file (senza estensione) come nome leggibile
               CLEAN_NAME=$(echo "$FILENAME" | sed -E 's/\.[^.]*$//' | tr '_' ' ') 
               
-              # Crea l'oggetto JSON
+              # Crea l'oggetto JSON con il campo 'group'
               echo "  {" >> files.json
               echo "    \"name\": \"$CLEAN_NAME\"," >> files.json
-              echo "    \"path\": \"$file\"" >> files.json
+              echo "    \"path\": \"$file\"," >> files.json
+              echo "    \"group\": \"$DIRNAME\"" >> files.json
               echo "  }" >> files.json
               FIRST=false
             fi
@@ -51,7 +53,4 @@ jobs:
         with:
           commit_message: "Auto-generated files.json index [skip ci]"
           file_pattern: 'files.json'
-          # **********************************************
-          # AGGIUNTO PER FERMARE IL CICLO DI CANCELLAZIONE DELLE BUILD
-          skip_ci: true 
-          # **********************************************
+          skip_ci: true
