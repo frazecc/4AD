@@ -106,4 +106,10 @@
     "path": "images/TABELLE/LANTERNA.png",
     "group": "TABELLE"
   }
+,
+  {
+    "name": "MISSIONI",
+    "path": "images/tabelle/MISSIONI.png",
+    "group": "tabelle"
+  }
 ]
