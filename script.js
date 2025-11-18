@@ -48,7 +48,7 @@ function renderChecklist(resources) {
     const checklistOutputDiv = document.getElementById('checklist-output');
     checklistOutputDiv.innerHTML = ''; 
     
-    // 1. Raggruppa le risorse per nome della sottocartella (group)
+    // 1. Raggruppa le risorse per nome della sottocartella (group) - LOGICA DINAMICA
     const groupedResources = resources.reduce((acc, resource) => {
         const group = resource.group || 'altro'; 
         if (!acc[group]) {
@@ -62,7 +62,7 @@ function renderChecklist(resources) {
     const imageOutputGrid = document.createElement('div');
     imageOutputGrid.id = 'image-output'; 
     
-    // 2. Itera sui gruppi (sottocartelle) che sono stati trovati nel JSON e crea una COLONNA
+    // 2. Itera sui gruppi (sottocartelle) e crea la COLONNA per ciascuno
     for (const groupName in groupedResources) {
         
         const columnDiv = document.createElement('div');
@@ -155,7 +155,7 @@ function displaySelectedImages() {
     selectedImages.forEach(image => {
         const img = document.createElement('img');
         
-        // CORREZIONE DEL PERCORSO: Ora usa ./ (relativo) invece di /4AD/ (assoluto)
+        // CORREZIONE DEL PERCORSO: Ora usa ./ (relativo)
         img.src = `./${image.path}`; 
         
         img.alt = image.name; 
