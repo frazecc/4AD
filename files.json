@@ -12,12 +12,6 @@
   }
 ,
   {
-    "name": "MAGGIORI ACCOMPAGNATI",
-    "path": "images/NEMICI/MAGGIORI ACCOMPAGNATI.png",
-    "group": "NEMICI"
-  }
-,
-  {
     "name": "barbaro",
     "path": "images/PG/barbaro.png",
     "group": "PG"
