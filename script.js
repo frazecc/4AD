@@ -2,6 +2,7 @@
 async function initApp() {
     let imageResources = [];
     
+    // Riferimento al div dove mostrare la lista di spunta
     const checklistDiv = document.getElementById('checklist');
     checklistDiv.innerHTML = 'Caricamento file di configurazione...';
 
@@ -24,6 +25,7 @@ async function initApp() {
 
     // Se il caricamento ha successo, procedi a costruire la lista
     renderChecklist(imageResources);
+    // Visualizza le immagini di default (tutte spuntate)
     displaySelectedImages();
 }
 
@@ -81,5 +83,5 @@ function displaySelectedImages() {
     });
 }
 
-// Avvia l'applicazione leggendo il file JSON
+// Avvia l'applicazione chiamando la funzione initApp
 window.onload = initApp;
