@@ -102,6 +102,12 @@
   }
 ,
   {
+    "name": "indizi2",
+    "path": "images/REGOLAMENTO/indizi2.png",
+    "group": "REGOLAMENTO"
+  }
+,
+  {
     "name": "indizi3",
     "path": "images/REGOLAMENTO/indizi3.png",
     "group": "REGOLAMENTO"
@@ -159,6 +165,12 @@
     "name": "tessere dungeon",
     "path": "images/STANZE/tessere dungeon.png",
     "group": "STANZE"
+  }
+,
+  {
+    "name": "OGGETTI MAGICI",
+    "path": "images/TABELLE/OGGETTI MAGICI.png",
+    "group": "TABELLE"
   }
 ,
   {
