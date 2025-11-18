@@ -150,12 +150,6 @@
   }
 ,
   {
-    "name": "eventi speciali",
-    "path": "images/STANZE/eventi speciali.png",
-    "group": "STANZE"
-  }
-,
-  {
     "name": "TESORI MAGICI DIABOLICI",
     "path": "images/TABELLE/TESORI MAGICI DIABOLICI.png",
     "group": "TABELLE"
