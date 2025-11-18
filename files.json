@@ -48,6 +48,12 @@
   }
 ,
   {
+    "name": "SEGUACI",
+    "path": "images/NEMICI/SEGUACI.png",
+    "group": "NEMICI"
+  }
+,
+  {
     "name": "barbaro",
     "path": "images/PG/barbaro.png",
     "group": "PG"
