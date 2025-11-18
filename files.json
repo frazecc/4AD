@@ -60,6 +60,12 @@
   }
 ,
   {
+    "name": "SCAPPARE",
+    "path": "images/REGOLAMENTO/SCAPPARE.png",
+    "group": "REGOLAMENTO"
+  }
+,
+  {
     "name": "dividere il gruppo",
     "path": "images/REGOLAMENTO/dividere il gruppo.png",
     "group": "REGOLAMENTO"
@@ -74,6 +80,12 @@
   {
     "name": "pietrificati 1",
     "path": "images/REGOLAMENTO/pietrificati 1.png",
+    "group": "REGOLAMENTO"
+  }
+,
+  {
+    "name": "pietrificati 2",
+    "path": "images/REGOLAMENTO/pietrificati 2.png",
     "group": "REGOLAMENTO"
   }
 ,
