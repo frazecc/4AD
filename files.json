@@ -72,8 +72,20 @@
   }
 ,
   {
+    "name": "pietrificati 1",
+    "path": "images/REGOLAMENTO/pietrificati 1.png",
+    "group": "REGOLAMENTO"
+  }
+,
+  {
     "name": "porta segreta",
     "path": "images/REGOLAMENTO/porta segreta.png",
+    "group": "REGOLAMENTO"
+  }
+,
+  {
+    "name": "riposarsi",
+    "path": "images/REGOLAMENTO/riposarsi.png",
     "group": "REGOLAMENTO"
   }
 ,
