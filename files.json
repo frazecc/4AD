@@ -204,6 +204,12 @@
   }
 ,
   {
+    "name": "MISSIONI",
+    "path": "images/TABELLE/MISSIONI.png",
+    "group": "TABELLE"
+  }
+,
+  {
     "name": "OGGETTI MAGICI",
     "path": "images/TABELLE/OGGETTI MAGICI.png",
     "group": "TABELLE"
