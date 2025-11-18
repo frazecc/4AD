@@ -18,6 +18,12 @@
   }
 ,
   {
+    "name": "SEGUACI ALTERNATIVI",
+    "path": "images/NEMICI/SEGUACI ALTERNATIVI.png",
+    "group": "NEMICI"
+  }
+,
+  {
     "name": "SEGUACI DIABOLICI",
     "path": "images/NEMICI/SEGUACI DIABOLICI.png",
     "group": "NEMICI"
