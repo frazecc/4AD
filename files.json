@@ -52,4 +52,46 @@
     "path": "images/PG/barbaro.png",
     "group": "PG"
   }
+,
+  {
+    "name": "chierico",
+    "path": "images/PG/chierico.png",
+    "group": "PG"
+  }
+,
+  {
+    "name": "elfo",
+    "path": "images/PG/elfo.png",
+    "group": "PG"
+  }
+,
+  {
+    "name": "furfante",
+    "path": "images/PG/furfante.png",
+    "group": "PG"
+  }
+,
+  {
+    "name": "guerriero",
+    "path": "images/PG/guerriero.png",
+    "group": "PG"
+  }
+,
+  {
+    "name": "mago",
+    "path": "images/PG/mago.png",
+    "group": "PG"
+  }
+,
+  {
+    "name": "mezzuomo",
+    "path": "images/PG/mezzuomo.png",
+    "group": "PG"
+  }
+,
+  {
+    "name": "nano",
+    "path": "images/PG/nano.png",
+    "group": "PG"
+  }
 ]
