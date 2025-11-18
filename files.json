@@ -6,6 +6,12 @@
   }
 ,
   {
+    "name": "barbaro",
+    "path": "images/PG/barbaro.png",
+    "group": "PG"
+  }
+,
+  {
     "name": "caratteristiche speciali",
     "path": "images/PG/caratteristiche speciali.png",
     "group": "PG"
