@@ -1,33 +1,85 @@
-// Elenco dei percorsi delle tue immagini
-// Assicurati che questi percorsi corrispondano ai nomi delle immagini che caricherai nella cartella 'images/'
-const imagePaths = [
-    "images/mappa_1.jpg", 
-    "images/mostro_2.png", 
-    "images/tesoro_3.jpg",
-    "images/evento_4.png"
-];
-
-let currentImageIndex = 0;
-const dynamicImage = document.getElementById('dynamic-image');
-
-// Funzione richiamata quando si clicca sul pulsante
-function changeImage() {
-    // Aggiorna l'indice per mostrare la prossima immagine
-    currentImageIndex++;
+// Funzione principale: carica il JSON e avvia la costruzione della lista
+async function initApp() {
+    let imageResources = [];
     
-    // Se l'indice supera la lunghezza dell'array, torna al primo elemento
-    if (currentImageIndex >= imagePaths.length) {
-        currentImageIndex = 0;
+    const checklistDiv = document.getElementById('checklist');
+    checklistDiv.innerHTML = 'Caricamento file di configurazione...';
+
+    try {
+        // Legge il file files.json generato dall'azione GitHub
+        const response = await fetch('files.json');
+        
+        if (!response.ok) {
+            // Se non trova il file, lo notifica
+            throw new Error(`Impossibile trovare files.json (Status: ${response.status}). Assicurati che l'azione GitHub sia stata completata.`);
+        }
+        
+        // Converte il JSON in un oggetto JavaScript
+        imageResources = await response.json();
+    } catch (error) {
+        checklistDiv.innerHTML = `<p style="color: red;">Errore di caricamento: ${error.message}.</p>`;
+        console.error("Errore nel caricamento del JSON:", error);
+        return; 
     }
-    
-    // Cambia la sorgente dell'immagine
-    dynamicImage.src = imagePaths[currentImageIndex];
-    
-    console.log("Immagine cambiata in: " + imagePaths[currentImageIndex]);
+
+    // Se il caricamento ha successo, procedi a costruire la lista
+    renderChecklist(imageResources);
+    displaySelectedImages();
 }
 
-// Imposta l'immagine iniziale all'avvio
-window.onload = function() {
-    // Questo assume che tu abbia almeno un'immagine caricata
-    dynamicImage.src = imagePaths[currentImageIndex];
-};
+
+// Funzione per generare la lista di spunta (Checklist)
+function renderChecklist(resources) {
+    const checklistDiv = document.getElementById('checklist');
+    checklistDiv.innerHTML = ''; 
+    
+    resources.forEach((resource, index) => {
+        const inputId = `img-checkbox-${index}`;
+        
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.id = inputId;
+        checkbox.value = resource.path;
+        checkbox.checked = true; 
+        checkbox.onchange = displaySelectedImages; 
+        
+        const label = document.createElement('label');
+        label.htmlFor = inputId;
+        label.textContent = resource.name;
+        
+        checklistDiv.appendChild(checkbox);
+        checklistDiv.appendChild(label);
+        checklistDiv.appendChild(document.createElement('br'));
+    });
+}
+
+// Funzione per visualizzare solo le immagini spuntate
+function displaySelectedImages() {
+    const outputDiv = document.getElementById('image-output');
+    outputDiv.innerHTML = ''; 
+    
+    const selectedCheckboxes = document.querySelectorAll('#checklist input[type="checkbox"]:checked');
+    
+    if (selectedCheckboxes.length === 0) {
+        outputDiv.innerHTML = '<p>Seleziona almeno un elemento per visualizzarlo.</p>';
+        return;
+    }
+    
+    selectedCheckboxes.forEach(checkbox => {
+        const imagePath = checkbox.value; 
+        
+        const img = document.createElement('img');
+        img.src = imagePath;
+        img.alt = checkbox.nextElementSibling.textContent; 
+        
+        img.style.maxWidth = '100%';
+        img.style.height = 'auto';
+        img.style.display = 'block';
+        img.style.margin = '15px auto'; 
+
+        outputDiv.appendChild(img);
+    });
+}
+
+// Avvia l'applicazione leggendo il file JSON
+window.onload = initApp;
