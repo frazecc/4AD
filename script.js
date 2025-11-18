@@ -42,6 +42,34 @@ function toggleGroup(groupName, checked) {
     displaySelectedImages();
 }
 
+// --- NUOVE FUNZIONI DI CONTROLLO GLOBALE ---
+
+// Funzione per selezionare tutti gli elementi (sia di gruppo che singoli)
+function selectAll() {
+    // Seleziona tutte le checkbox nella pagina
+    const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+    allCheckboxes.forEach(checkbox => {
+        checkbox.checked = true;
+    });
+    
+    // Aggiorna la visualizzazione
+    displaySelectedImages();
+}
+
+// Funzione per deselezionare tutti gli elementi (sia di gruppo che singoli)
+function deselectAll() {
+    // Seleziona tutte le checkbox nella pagina
+    const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+    allCheckboxes.forEach(checkbox => {
+        checkbox.checked = false;
+    });
+    
+    // Aggiorna la visualizzazione
+    displaySelectedImages();
+}
+
+// ---------------------------------------------
+
 
 // Funzione per generare le colonne della lista di spunta
 function renderChecklist(resources) {
@@ -155,7 +183,7 @@ function displaySelectedImages() {
     selectedImages.forEach(image => {
         const img = document.createElement('img');
         
-        // CORREZIONE DEL PERCORSO: Ora usa ./ (relativo)
+        // Correzione del percorso relativo
         img.src = `./${image.path}`; 
         
         img.alt = image.name; 
