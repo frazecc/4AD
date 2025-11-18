@@ -7,31 +7,31 @@ async function initApp() {
     checklistDiv.innerHTML = 'Caricamento file di configurazione...';
 
     try {
-        // *************************************************************
         // CORREZIONE DEL PERCORSO PER REPOSITORY DI PROGETTO (/4AD/)
-        // Usiamo l'indirizzo assoluto per il file JSON.
         const jsonPath = '/4AD/files.json'; 
-        // *************************************************************
-
         const response = await fetch(jsonPath);
         
         if (!response.ok) {
-            // Se non trova il file (es. 404), genera un errore
             throw new Error(`Impossibile trovare files.json (Status: ${response.status}).`);
         }
         
         // Converte il JSON in un oggetto JavaScript
         imageResources = await response.json();
+
+        // *************************************************************
+        // AGGIUNTA PER ORDINAMENTO ALFABETICO
+        imageResources.sort((a, b) => a.name.localeCompare(b.name));
+        // *************************************************************
+        
     } catch (error) {
         // Mostra un errore chiaro direttamente sul sito in caso di fallimento
-        checklistDiv.innerHTML = `<p style="color: red; font-weight: bold;">ERRORE DI CARICAMENTO! Controlla la console.</p><p style="color: red;">Dettagli: ${error.message}</p>`;
+        checklistDiv.innerHTML = `<p style="color: red; font-weight: bold;">ERRORE DI CARICAMENTO!</p><p style="color: red;">Dettagli: ${error.message}</p>`;
         console.error("Errore nel caricamento del JSON:", error);
         return; 
     }
 
-    // Se il caricamento ha successo, procedi a costruire la lista
+    // Se il caricamento ha successo, procede a costruire la lista ordinata
     renderChecklist(imageResources);
-    // Visualizza le immagini di default (tutte spuntate)
     displaySelectedImages();
 }
 
