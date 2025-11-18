@@ -178,4 +178,10 @@
     "path": "images/TABELLE/TESORI MAGICI DIABOLICI.png",
     "group": "TABELLE"
   }
+,
+  {
+    "name": "eventi speciali",
+    "path": "images/TABELLE/eventi speciali.png",
+    "group": "TABELLE"
+  }
 ]
