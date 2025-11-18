@@ -1,11 +1,5 @@
 [
   {
-    "name": "ABERRANTI DIABOLICI",
-    "path": "images/NEMICI/ABERRANTI DIABOLICI.png",
-    "group": "NEMICI"
-  }
-,
-  {
     "name": "ABERRANTI",
     "path": "images/NEMICI/ABERRANTI.png",
     "group": "NEMICI"
