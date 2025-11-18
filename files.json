@@ -72,6 +72,12 @@
   }
 ,
   {
+    "name": "RICOMPENSE EPICHE",
+    "path": "images/REGOLAMENTO/RICOMPENSE EPICHE.png",
+    "group": "REGOLAMENTO"
+  }
+,
+  {
     "name": "SCAPPARE",
     "path": "images/REGOLAMENTO/SCAPPARE.png",
     "group": "REGOLAMENTO"
@@ -110,6 +116,12 @@
   {
     "name": "riposarsi",
     "path": "images/REGOLAMENTO/riposarsi.png",
+    "group": "REGOLAMENTO"
+  }
+,
+  {
+    "name": "tesoro nascosto",
+    "path": "images/REGOLAMENTO/tesoro nascosto.png",
     "group": "REGOLAMENTO"
   }
 ,
