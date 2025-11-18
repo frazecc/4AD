@@ -10,4 +10,28 @@
     "path": "images/PG/barbaro.png",
     "group": "PG"
   }
+,
+  {
+    "name": "ABERRANTI",
+    "path": "images/nemici/ABERRANTI.png",
+    "group": "nemici"
+  }
+,
+  {
+    "name": "BOSS",
+    "path": "images/nemici/BOSS.png",
+    "group": "nemici"
+  }
+,
+  {
+    "name": "INFESTANTI DIABOLICI",
+    "path": "images/nemici/INFESTANTI DIABOLICI.png",
+    "group": "nemici"
+  }
+,
+  {
+    "name": "INFESTANTI",
+    "path": "images/nemici/INFESTANTI.png",
+    "group": "nemici"
+  }
 ]
