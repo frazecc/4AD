@@ -54,8 +54,32 @@
   }
 ,
   {
+    "name": "LANTERNA",
+    "path": "images/REGOLAMENTO/LANTERNA.png",
+    "group": "REGOLAMENTO"
+  }
+,
+  {
     "name": "TESORI MAGICI DIABOLICI",
     "path": "images/REGOLAMENTO/TESORI MAGICI DIABOLICI.png",
+    "group": "REGOLAMENTO"
+  }
+,
+  {
+    "name": "dividere il gruppo",
+    "path": "images/REGOLAMENTO/dividere il gruppo.png",
+    "group": "REGOLAMENTO"
+  }
+,
+  {
+    "name": "indizi3",
+    "path": "images/REGOLAMENTO/indizi3.png",
+    "group": "REGOLAMENTO"
+  }
+,
+  {
+    "name": "trasportare peso",
+    "path": "images/REGOLAMENTO/trasportare peso.png",
     "group": "REGOLAMENTO"
   }
 ,
