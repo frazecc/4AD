@@ -6,32 +6,32 @@
   }
 ,
   {
-    "name": "barbaro",
-    "path": "images/PG/barbaro.png",
-    "group": "PG"
-  }
-,
-  {
     "name": "ABERRANTI",
-    "path": "images/nemici/ABERRANTI.png",
-    "group": "nemici"
+    "path": "images/NEMICI/ABERRANTI.png",
+    "group": "NEMICI"
   }
 ,
   {
     "name": "BOSS",
-    "path": "images/nemici/BOSS.png",
-    "group": "nemici"
+    "path": "images/NEMICI/BOSS.png",
+    "group": "NEMICI"
   }
 ,
   {
     "name": "INFESTANTI DIABOLICI",
-    "path": "images/nemici/INFESTANTI DIABOLICI.png",
-    "group": "nemici"
+    "path": "images/NEMICI/INFESTANTI DIABOLICI.png",
+    "group": "NEMICI"
   }
 ,
   {
     "name": "INFESTANTI",
-    "path": "images/nemici/INFESTANTI.png",
-    "group": "nemici"
+    "path": "images/NEMICI/INFESTANTI.png",
+    "group": "NEMICI"
+  }
+,
+  {
+    "name": "barbaro",
+    "path": "images/PG/barbaro.png",
+    "group": "PG"
   }
 ]
