@@ -66,14 +66,14 @@
   }
 ,
   {
-    "name": "elfo",
-    "path": "images/PG/elfo.png",
+    "name": "BASE - ELFO",
+    "path": "images/PG/BASE - ELFO.png",
     "group": "PG"
   }
 ,
   {
-    "name": "furfante",
-    "path": "images/PG/furfante.png",
+    "name": "BASE - FURFANTE",
+    "path": "images/PG/BASE - FURFANTE.png",
     "group": "PG"
   }
 ,
