@@ -12,8 +12,20 @@
   }
 ,
   {
+    "name": "BOSS",
+    "path": "images/NEMICI/BOSS.png",
+    "group": "NEMICI"
+  }
+,
+  {
     "name": "INFESTANTI DIABOLICI",
     "path": "images/NEMICI/INFESTANTI DIABOLICI.png",
+    "group": "NEMICI"
+  }
+,
+  {
+    "name": "INFESTANTI",
+    "path": "images/NEMICI/INFESTANTI.png",
     "group": "NEMICI"
   }
 ,
