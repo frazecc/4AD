@@ -1,30 +1,35 @@
-// Funzione per visualizzare solo le immagini spuntate
-function displaySelectedImages() {
-    const outputDiv = document.getElementById('image-output');
-    outputDiv.innerHTML = ''; 
+// Funzione principale: carica il JSON e avvia la costruzione della lista
+async function initApp() {
+    let imageResources = [];
     
-    const selectedCheckboxes = document.querySelectorAll('#checklist input[type="checkbox"]:checked');
-    
-    if (selectedCheckboxes.length === 0) {
-        outputDiv.innerHTML = '<p>Seleziona almeno un elemento per visualizzarlo.</p>';
-        return;
-    }
-    
-    selectedCheckboxes.forEach(checkbox => {
-        const imagePath = checkbox.value; 
-        
-        const img = document.createElement('img');
-        img.src = imagePath;
-        img.alt = checkbox.nextElementSibling.textContent; 
-        
-        // *******************************************************
-        // RIGHE RIMOSSE: gli stili sono ora in style.css!
-        // img.style.maxWidth = '100%';
-        // img.style.height = 'auto';
-        // img.style.display = 'block';
-        // img.style.margin = '15px auto'; 
-        // *******************************************************
+    // Riferimento al div dove mostrare la lista di spunta
+    const checklistDiv = document.getElementById('checklist');
+    checklistDiv.innerHTML = 'Caricamento file di configurazione...';
 
-        outputDiv.appendChild(img);
-    });
+    try {
+        // MODIFICA CRITICA: Definiamo il percorso del file JSON
+        // L'uso di './files.json' o 'files.json' dovrebbe funzionare, ma lo esplicitiamo 
+        // per debug (per repository di progetto, il percorso corretto è essenziale).
+        const jsonPath = 'files.json'; 
+
+        const response = await fetch(jsonPath);
+        
+        if (!response.ok) {
+            // Se non trova il file (es. 404), genera un errore
+            throw new Error(`Impossibile trovare files.json (Status: ${response.status}).`);
+        }
+        
+        // Converte il JSON in un oggetto JavaScript
+        imageResources = await response.json();
+    } catch (error) {
+        // Mostra un errore chiaro direttamente sul sito in caso di fallimento
+        checklistDiv.innerHTML = `<p style="color: red; font-weight: bold;">ERRORE DI CARICAMENTO! Controlla la console.</p><p style="color: red;">Dettagli: ${error.message}</p>`;
+        console.error("Errore nel caricamento del JSON:", error);
+        return; 
+    }
+
+    // Se il caricamento ha successo, procedi a costruire la lista
+    renderChecklist(imageResources);
+    // Visualizza le immagini di default (tutte spuntate)
+    displaySelectedImages();
 }
