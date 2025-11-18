@@ -150,6 +150,12 @@
   }
 ,
   {
+    "name": "cosa ce nella stanza",
+    "path": "images/STANZE/cosa ce nella stanza.png",
+    "group": "STANZE"
+  }
+,
+  {
     "name": "tessere dungeon",
     "path": "images/STANZE/tessere dungeon.png",
     "group": "STANZE"
