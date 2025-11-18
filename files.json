@@ -30,6 +30,11 @@
   }
 ,
   {
+    "name": "SEGUACI ALTERNATIVI",
+    "path": "images/SEGUACI ALTERNATIVI.png"
+  }
+,
+  {
     "name": "SEGUACI DIABOLICI",
     "path": "images/SEGUACI DIABOLICI.png"
   }
@@ -37,6 +42,11 @@
   {
     "name": "dividere il gruppo",
     "path": "images/dividere il gruppo.png"
+  }
+,
+  {
+    "name": "eroi caduti",
+    "path": "images/eroi caduti.png"
   }
 ,
   {
