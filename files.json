@@ -4,4 +4,10 @@
     "path": "images/NEMICI/ABERRANTI DIABOLICI.png",
     "group": "NEMICI"
   }
+,
+  {
+    "name": "barbaro",
+    "path": "images/PG/barbaro.png",
+    "group": "PG"
+  }
 ]
