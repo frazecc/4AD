@@ -6,6 +6,12 @@
   }
 ,
   {
+    "name": "caratteristiche speciali",
+    "path": "images/PG/caratteristiche speciali.png",
+    "group": "PG"
+  }
+,
+  {
     "name": "TESORI MAGICI DIABOLICI",
     "path": "images/REGOLAMENTO/TESORI MAGICI DIABOLICI.png",
     "group": "REGOLAMENTO"
