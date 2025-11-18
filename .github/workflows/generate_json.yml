@@ -51,3 +51,7 @@ jobs:
         with:
           commit_message: "Auto-generated files.json index [skip ci]"
           file_pattern: 'files.json'
+          # **********************************************
+          # AGGIUNTO PER FERMARE IL CICLO DI CANCELLAZIONE DELLE BUILD
+          skip_ci: true 
+          # **********************************************
