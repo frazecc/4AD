@@ -3,10 +3,11 @@ let allImageResources = [];
 
 // Funzione principale: carica il JSON e avvia la costruzione della lista
 async function initApp() {
-    const checklistDiv = document.getElementById('checklist-output'); // Nota il cambio di ID
+    const checklistDiv = document.getElementById('checklist-output'); 
     checklistDiv.innerHTML = 'Caricamento file di configurazione...';
 
     try {
+        // ANTI-CACHE: Aggiungiamo un timestamp per forzare il download del file aggiornato
         const jsonPath = '/4AD/files.json'; 
         const cacheBuster = `?v=${new Date().getTime()}`; 
         const fullPath = jsonPath + cacheBuster; 
@@ -32,7 +33,7 @@ async function initApp() {
     displaySelectedImages();
 }
 
-// NUOVA FUNZIONE DI GRUPPO: Seleziona/Deseleziona tutti gli elementi di una sottocartella
+// Funzione di Gruppo: Seleziona/Deseleziona tutti gli elementi di una sottocartella
 function toggleGroup(groupName, checked) {
     // Seleziona tutte le checkbox che appartengono a questo gruppo (groupName)
     const checkboxes = document.querySelectorAll(`input[data-group="${groupName}"]`);
@@ -61,7 +62,7 @@ function renderChecklist(resources) {
         return acc;
     }, {});
     
-    // Rimuoviamo il vecchio #image-output e creiamo la griglia delle colonne
+    // Creiamo la griglia delle colonne
     const imageOutputGrid = document.createElement('div');
     imageOutputGrid.id = 'image-output'; 
     
@@ -82,7 +83,7 @@ function renderChecklist(resources) {
         const groupCheckbox = document.createElement('input');
         groupCheckbox.type = 'checkbox';
         groupCheckbox.id = `group-${groupName}`;
-        groupCheckbox.checked = true; 
+        groupCheckbox.checked = true; // Seleziona il gruppo di default
         groupCheckbox.onchange = (e) => toggleGroup(groupName, e.target.checked);
         
         headerDiv.appendChild(headerTitle);
@@ -123,59 +124,4 @@ function renderChecklist(resources) {
 
 // Funzione per visualizzare solo le immagini spuntate
 function displaySelectedImages() {
-    // Cerchiamo tutte le immagini selezionate tra tutte le colonne
     const selectedImages = [];
-    const allCheckboxes = document.querySelectorAll('.column-checklist input[type="checkbox"]:checked');
-    
-    allCheckboxes.forEach(checkbox => {
-        // Ignoriamo le checkbox di gruppo (che non hanno valore o alt)
-        if (checkbox.value) {
-            // Troviamo il nome leggibile cercando il label associato
-            const imageLabel = document.querySelector(`label[for="${checkbox.id}"]`).textContent;
-            
-            selectedImages.push({
-                path: checkbox.value,
-                name: imageLabel
-            });
-        }
-    });
-
-    const outputDiv = document.getElementById('results');
-    // Rimuove il vecchio contenuto sotto la sezione Risorse Selezionate
-    let oldImageOutput = document.getElementById('final-image-output');
-    if (oldImageOutput) {
-        oldImageOutput.remove();
-    }
-    
-    const finalImageOutput = document.createElement('div');
-    finalImageOutput.id = 'final-image-output';
-    finalImageOutput.style.marginTop = '20px';
-    outputDiv.appendChild(finalImageOutput);
-
-
-    if (selectedImages.length === 0) {
-        finalImageOutput.innerHTML = '<p>Seleziona almeno un elemento per visualizzarlo.</p>';
-        return;
-    }
-
-    // Qui creiamo la visualizzazione delle immagini selezionate, separata dalle checklist
-    selectedImages.forEach(image => {
-        const img = document.createElement('img');
-        img.src = image.path;
-        img.alt = image.name; 
-        
-        // Al click, apre l'immagine a schermo intero
-        img.onclick = () => window.open(image.path, '_blank');
-        img.style.cursor = 'pointer'; 
-
-        finalImageOutput.appendChild(img);
-    });
-}
-
-// Funzione che apre l'immagine a schermo intero (è ancora necessaria, ma la usiamo in linea)
-function showFullscreen(imagePath) {
-    window.open(imagePath, '_blank');
-}
-
-// Avvia l'applicazione chiamando la funzione initApp quando la pagina è caricata
-window.onload = initApp;
