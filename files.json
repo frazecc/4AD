@@ -1,47 +1,5 @@
 [
   {
-    "name": "ABERRANTI",
-    "path": "images/NEMICI/ABERRANTI.png",
-    "group": "NEMICI"
-  }
-,
-  {
-    "name": "BOSS",
-    "path": "images/NEMICI/BOSS.png",
-    "group": "NEMICI"
-  }
-,
-  {
-    "name": "INFESTANTI DIABOLICI",
-    "path": "images/NEMICI/INFESTANTI DIABOLICI.png",
-    "group": "NEMICI"
-  }
-,
-  {
-    "name": "INFESTANTI",
-    "path": "images/NEMICI/INFESTANTI.png",
-    "group": "NEMICI"
-  }
-,
-  {
-    "name": "SEGUACI ALTERNATIVI",
-    "path": "images/NEMICI/SEGUACI ALTERNATIVI.png",
-    "group": "NEMICI"
-  }
-,
-  {
-    "name": "SEGUACI DIABOLICI",
-    "path": "images/NEMICI/SEGUACI DIABOLICI.png",
-    "group": "NEMICI"
-  }
-,
-  {
-    "name": "SEGUACI",
-    "path": "images/NEMICI/SEGUACI.png",
-    "group": "NEMICI"
-  }
-,
-  {
     "name": "barbaro",
     "path": "images/PG/barbaro.png",
     "group": "PG"
