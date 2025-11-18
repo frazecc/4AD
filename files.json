@@ -150,6 +150,12 @@
   }
 ,
   {
+    "name": "tessere dungeon",
+    "path": "images/STANZE/tessere dungeon.png",
+    "group": "STANZE"
+  }
+,
+  {
     "name": "TESORI MAGICI DIABOLICI",
     "path": "images/TABELLE/TESORI MAGICI DIABOLICI.png",
     "group": "TABELLE"
