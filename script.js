@@ -2,7 +2,6 @@
 async function initApp() {
     let imageResources = [];
     
-    // Riferimento al div dove mostrare la lista di spunta
     const checklistDiv = document.getElementById('checklist');
     checklistDiv.innerHTML = 'Caricamento file di configurazione...';
 
@@ -24,13 +23,11 @@ async function initApp() {
         imageResources.sort((a, b) => a.name.localeCompare(b.name));
         
     } catch (error) {
-        // Mostra un errore chiaro direttamente sul sito in caso di fallimento
         checklistDiv.innerHTML = `<p style="color: red; font-weight: bold;">ERRORE DI CARICAMENTO!</p><p style="color: red;">Dettagli: ${error.message}</p>`;
         console.error("Errore nel caricamento del JSON:", error);
         return; 
     }
 
-    // Se il caricamento ha successo, procede a costruire la lista ordinata
     renderChecklist(imageResources);
     displaySelectedImages();
 }
@@ -80,9 +77,22 @@ function displaySelectedImages() {
         img.src = imagePath;
         img.alt = checkbox.nextElementSibling.textContent; 
         
+        // *************************************************************
+        // AGGIUNTA EVENTO: Al click, chiama la funzione showFullscreen
+        img.onclick = () => showFullscreen(imagePath);
+        img.style.cursor = 'pointer'; // Indica che l'elemento è cliccabile
+        // *************************************************************
+
         outputDiv.appendChild(img);
     });
 }
+
+// *************************************************************
+// NUOVA FUNZIONE: Apre l'immagine a schermo intero in una nuova scheda
+function showFullscreen(imagePath) {
+    window.open(imagePath, '_blank');
+}
+// *************************************************************
 
 // Avvia l'applicazione chiamando la funzione initApp quando la pagina è caricata
 window.onload = initApp;
