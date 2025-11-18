@@ -10,6 +10,11 @@
   }
 ,
   {
+    "name": "guerriero",
+    "path": "images/guerriero.png"
+  }
+,
+  {
     "name": "indizi3",
     "path": "images/indizi3.png"
   }
