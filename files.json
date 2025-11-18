@@ -40,6 +40,11 @@
   }
 ,
   {
+    "name": "riposarsi",
+    "path": "images/riposarsi.png"
+  }
+,
+  {
     "name": "trasportare peso",
     "path": "images/trasportare peso.png"
   }
