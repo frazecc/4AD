@@ -180,6 +180,12 @@
   }
 ,
   {
+    "name": "caratteristiche speciali",
+    "path": "images/TABELLE/caratteristiche speciali.png",
+    "group": "TABELLE"
+  }
+,
+  {
     "name": "eventi speciali",
     "path": "images/TABELLE/eventi speciali.png",
     "group": "TABELLE"
