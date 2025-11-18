@@ -1,5 +1,11 @@
 [
   {
+    "name": "MAGGIORI ACCOMPAGNATI",
+    "path": "images/NEMICI/MAGGIORI ACCOMPAGNATI.png",
+    "group": "NEMICI"
+  }
+,
+  {
     "name": "STANZE INIZIALI DUNGEON",
     "path": "images/NEMICI/STANZE INIZIALI DUNGEON.png",
     "group": "NEMICI"
