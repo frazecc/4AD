@@ -125,3 +125,49 @@ function renderChecklist(resources) {
 // Funzione per visualizzare solo le immagini spuntate
 function displaySelectedImages() {
     const selectedImages = [];
+    const allCheckboxes = document.querySelectorAll('.column-checklist input[type="checkbox"]:checked');
+    
+    allCheckboxes.forEach(checkbox => {
+        // Ignoriamo le checkbox di gruppo (che non hanno valore o alt)
+        if (checkbox.value) {
+            const imageLabel = document.querySelector(`label[for="${checkbox.id}"]`).textContent;
+            
+            selectedImages.push({
+                path: checkbox.value,
+                name: imageLabel
+            });
+        }
+    });
+
+    const outputDiv = document.getElementById('results');
+    
+    // Rimuove il vecchio contenuto
+    let oldImageOutput = document.getElementById('final-image-output');
+    if (oldImageOutput) {
+        oldImageOutput.remove();
+    }
+    
+    // Crea il nuovo contenitore per le immagini selezionate
+    const finalImageOutput = document.createElement('div');
+    finalImageOutput.id = 'final-image-output';
+    finalImageOutput.style.marginTop = '20px';
+    outputDiv.appendChild(finalImageOutput);
+
+
+    if (selectedImages.length === 0) {
+        finalImageOutput.innerHTML = '<p>Seleziona almeno un elemento per visualizzarlo.</p>';
+        return;
+    }
+
+    // Visualizzazione delle immagini selezionate
+    selectedImages.forEach(image => {
+        const img = document.createElement('img');
+        
+        // CORREZIONE DEL PERCORSO: Aggiungiamo /4AD/ all'inizio
+        img.src = `/4AD/${image.path}`; 
+        
+        img.alt = image.name; 
+        
+        // Al click, apre l'immagine a schermo intero
+        img.onclick = () => window.open(img.src, '_blank');
+        img.style.cursor
