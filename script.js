@@ -48,11 +48,8 @@ function renderChecklist(resources) {
     const checklistOutputDiv = document.getElementById('checklist-output');
     checklistOutputDiv.innerHTML = ''; 
     
-    // *************************************************************
-    // PUNTO CHIAVE: CREAZIONE DINAMICA DEI GRUPPI/COLONNE
     // 1. Raggruppa le risorse per nome della sottocartella (group)
     const groupedResources = resources.reduce((acc, resource) => {
-        // Usa il campo 'group' dal JSON (es. 'pg', 'nemici'). Se non c'è, usa 'altro'.
         const group = resource.group || 'altro'; 
         if (!acc[group]) {
             acc[group] = [];
@@ -60,7 +57,6 @@ function renderChecklist(resources) {
         acc[group].push(resource);
         return acc;
     }, {});
-    // *************************************************************
     
     // Creiamo la griglia delle colonne
     const imageOutputGrid = document.createElement('div');
@@ -77,14 +73,13 @@ function renderChecklist(resources) {
         headerDiv.classList.add('column-header');
         
         const headerTitle = document.createElement('h3');
-        // Usa il nome del gruppo trovato nel JSON come titolo della colonna
         headerTitle.textContent = groupName.toUpperCase(); 
         
         // Checkbox principale del gruppo
         const groupCheckbox = document.createElement('input');
         groupCheckbox.type = 'checkbox';
         groupCheckbox.id = `group-${groupName}`;
-        groupCheckbox.checked = true; // Seleziona il gruppo di default
+        groupCheckbox.checked = true; 
         groupCheckbox.onchange = (e) => toggleGroup(groupName, e.target.checked);
         
         headerDiv.appendChild(headerTitle);
@@ -104,7 +99,7 @@ function renderChecklist(resources) {
             checkbox.value = resource.path;
             checkbox.checked = true; 
             checkbox.onchange = displaySelectedImages; 
-            checkbox.setAttribute('data-group', groupName); // Attributo per il selettore di gruppo
+            checkbox.setAttribute('data-group', groupName); 
             
             const label = document.createElement('label');
             label.htmlFor = inputId;
@@ -160,8 +155,8 @@ function displaySelectedImages() {
     selectedImages.forEach(image => {
         const img = document.createElement('img');
         
-        // CORREZIONE DEL PERCORSO
-        img.src = `/4AD/${image.path}`; 
+        // CORREZIONE DEL PERCORSO: Ora usa ./ (relativo) invece di /4AD/ (assoluto)
+        img.src = `./${image.path}`; 
         
         img.alt = image.name; 
         
