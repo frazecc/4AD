@@ -60,12 +60,6 @@
   }
 ,
   {
-    "name": "caratteristiche speciali",
-    "path": "images/PG/caratteristiche speciali.png",
-    "group": "PG"
-  }
-,
-  {
     "name": "chierico",
     "path": "images/PG/chierico.png",
     "group": "PG"
