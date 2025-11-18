@@ -170,4 +170,11 @@ function displaySelectedImages() {
         
         // Al click, apre l'immagine a schermo intero
         img.onclick = () => window.open(img.src, '_blank');
-        img.style.cursor
+        img.style.cursor = 'pointer'; 
+
+        finalImageOutput.appendChild(img);
+    });
+}
+
+// Avvia l'applicazione chiamando la funzione initApp quando la pagina è caricata
+window.onload = initApp;
