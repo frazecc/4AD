@@ -75,6 +75,11 @@
   }
 ,
   {
+    "name": "tesoro nascosto",
+    "path": "images/tesoro nascosto.png"
+  }
+,
+  {
     "name": "trasportare peso",
     "path": "images/trasportare peso.png"
   }
