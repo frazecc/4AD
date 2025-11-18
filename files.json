@@ -18,6 +18,12 @@
   }
 ,
   {
+    "name": "chierico",
+    "path": "images/PG/chierico.png",
+    "group": "PG"
+  }
+,
+  {
     "name": "furfante",
     "path": "images/PG/furfante.png",
     "group": "PG"
